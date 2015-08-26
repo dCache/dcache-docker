@@ -45,6 +45,8 @@ VOLUME /var/lib/postgresql/data
 COPY docker-entrypoint.sh /
 COPY init-dcache-db.sh /docker-entrypoint-initdb.d/
 
+COPY pg_hba.conf /etc/postgresql/${PG_MAJOR}/
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 5432
