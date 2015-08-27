@@ -11,7 +11,7 @@ echo
 echo "To run dcache do:"
 echo
 echo "# docker run -d -P --name db dcache/db-master"
-echo 
+echo
 echo "and then:"
 echo
 echo "# docker run -ti -P --name dcache --link db:dcachedb dcache/standalone-master /bin/bash"
