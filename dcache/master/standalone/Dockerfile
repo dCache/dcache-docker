@@ -21,4 +21,4 @@ EXPOSE 2280
 EXPOSE 22125
 EXPOSE 22224
 
-CMD ["/run-dcache.sh"]
+ENTRYPOINT ["/run-dcache.sh"]
