@@ -1,0 +1,13 @@
+dcache:
+  build: .
+  ports:
+   - "2049:2049"
+   - "2880:2880"
+   - "22125:22125"
+   - "22224:22224"
+  volumes:
+   - /pools:/pools
+  links:
+   - db
+db:
+  image: dcache/db-master
