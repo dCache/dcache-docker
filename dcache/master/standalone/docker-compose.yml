@@ -6,7 +6,8 @@ dcache:
    - "22125:22125"
    - "22224:22224"
   volumes:
-   - /pools:/pools
+   - /space/docker-volumes/dcache-pools:/pools
+   - /space/docker-volumes/docker-logs:/var/log/dcache
   links:
    - db:dcachedb
 db:
