@@ -11,9 +11,8 @@ RUN apt-get -y install apache2-utils
 RUN echo "admin" | htpasswd -i -c /etc/dcache/htpasswd admin
 RUN echo "user"  | htpasswd -i /etc/dcache/htpasswd user
 
-RUN dcache pool create --size=10000000000 /pools pool1 pools
-
 VOLUME /pools
+VOLUME /var/log/dcache
 
 EXPOSE 111
 EXPOSE 2049
