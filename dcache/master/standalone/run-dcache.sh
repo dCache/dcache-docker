@@ -2,16 +2,19 @@
 
 DCACHE="/usr/bin/dcache"
 
+stopDcache() {
+  ${DCACHE} stop
+}
+
 ${DCACHE} database update
 
 ${DCACHE} start
 
 lock=$(${DCACHE} property dcache.paths.lock.file)
 
-trap "{ \${DCACHE} stop }" SIGINT SIGTERM
+trap "stopDcache;" SIGINT SIGTERM
 
-while [ -n "$lock" ]; do
+while [ -f "$lock" ]; do
   sleep 10
 done
-
 
