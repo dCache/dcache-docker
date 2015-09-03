@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 MAINTAINER dCache "https://www.dcache.org"
 
+RUN groupadd -r dcache && useradd -r -g dcache dcache
+
 RUN apt-get -y install software-properties-common && add-apt-repository -y ppa:webupd8team/java
 
 RUN apt-get -y update && apt-get -y upgrade
