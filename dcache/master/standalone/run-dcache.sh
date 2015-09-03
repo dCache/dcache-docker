@@ -8,9 +8,10 @@ stopDcache() {
 
 ${DCACHE} database update
 
-if [ ! -d /pools/pools ]
+if [ ! -d /pools/pool1 ]
 then
-  dcache pool create --size=10000000000 /pools/pools pool1 pools
+  mkdir -p /pools/pool1/data
+  mkdir -p /pools/pool1/control
 fi
 
 ${DCACHE} start
