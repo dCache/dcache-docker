@@ -1,4 +1,4 @@
-FROM dcache/base-master:latest
+FROM dcache/base:latest
 
 COPY dcache.conf /etc/dcache/
 COPY gplazma.conf /etc/dcache/

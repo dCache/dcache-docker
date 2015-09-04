@@ -12,7 +12,7 @@ dcache:
   links:
    - db:dcachedb
 db:
-  image: dcache/db-master
+  image: dcache/db:latest
   volumes_from:
    - data
 data:
