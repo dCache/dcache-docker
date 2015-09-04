@@ -7,13 +7,17 @@ dcache:
    - "2880:2880"
    - "22125:22125"
    - "22224:22224"
-  volumes:
-   - /space/docker-volumes/dcache-pools:/pools
-   - /space/docker-volumes/dcache-logs:/var/log/dcache
+  volumes_from:
+   - data
   links:
    - db:dcachedb
 db:
   image: dcache/db:2.13
+  volumes_from:
+   - data
+data:
+  image: ubuntu:latest
   volumes:
-   - /space/docker-volumes/dcache-db:/var/lib/postgresql/data
-
+   - /pools
+   - /var/log/dcache
+   - /var/lib/postgresql/data
