@@ -1,0 +1,4 @@
+/ localhost(rw,no_root_squash,no_dcap)
+/ 172.0.0.0/8(rw,no_dcap)
+
+

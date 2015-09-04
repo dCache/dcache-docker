@@ -1,0 +1,19 @@
+dcache:
+  build: .
+  hostname: zitpcx18435
+  domainname: desy.de
+  ports:
+   - "2049:2049"
+   - "2880:2880"
+   - "22125:22125"
+   - "22224:22224"
+  volumes:
+   - /space/docker-volumes/dcache-pools:/pools
+   - /space/docker-volumes/dcache-logs:/var/log/dcache
+  links:
+   - db:dcachedb
+db:
+  image: dcache/db:2.13
+  volumes:
+   - /space/docker-volumes/dcache-db:/var/lib/postgresql/data
+
