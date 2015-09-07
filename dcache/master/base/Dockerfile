@@ -32,3 +32,6 @@ RUN openssl rsa -in /etc/grid-security/hostkey.pem-pk8 -out /etc/grid-security/h
 RUN rm -rf /dcache
 RUN rm -rf /root/.m2
 
+EXPOSE 111
+
+ENTRYPOINT['/run-dcache.sh']

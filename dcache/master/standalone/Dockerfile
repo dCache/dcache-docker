@@ -1,23 +1,13 @@
-FROM dcache/base:latest
+FROM ubuntu:latest
 
-COPY dcache.conf /etc/dcache/
-COPY gplazma.conf /etc/dcache/
-COPY exports /etc/dcache/
-COPY storage-authzdb /etc/grid-security/
-COPY standalone.conf /etc/dcache/layouts/
-COPY run-dcache.sh /
+COPY etc/dcache /etc/dcache
+COPY etc/grid-security /etc/grid-security
 
-RUN apt-get -y install apache2-utils
-RUN echo "admin" | htpasswd -i -c /etc/dcache/htpasswd admin
-RUN echo "user"  | htpasswd -i /etc/dcache/htpasswd user
+COPY init-dcache /
 
-VOLUME /pools
+VOLUME /etc/dcache
 VOLUME /var/log/dcache
+VOLUME /var/lib/dcache
+VOLUME /var/lib/postgresql/data
+VOLUME /pools
 
-EXPOSE 111
-EXPOSE 2049
-EXPOSE 2280
-EXPOSE 22125
-EXPOSE 22224
-
-ENTRYPOINT ["/run-dcache.sh"]
