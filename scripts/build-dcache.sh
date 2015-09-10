@@ -15,11 +15,11 @@ then
   exit 3
 fi
 
-docker build --rm --no-cache -t dcache/base:${tag} ../dcache/${tag}/base/ \
+docker build --rm --no-cache -t dcache/deps:${tag} ../dcache/${tag}_new/deps/ \
 && \
-docker build --rm --no-cache -t dcache/db:${tag} ../dcache/${tag}/db/ \
+docker build --rm --no-cache -t dcache/db:${tag} ../dcache/${tag}_new/db/ \
 && \
-docker build --rm --no-cache -t dcache/standalone:${tag} ../dcache/${tag}/standalone/
+docker build --rm --no-cache -t dcache/build:${tag} ../dcache/${tag}_new/build/
 
 echo "building finished."
 echo

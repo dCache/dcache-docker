@@ -1,0 +1,3 @@
+db:
+  image: dcache/db:master
+
