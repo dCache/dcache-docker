@@ -1,7 +1,11 @@
-FROM: dcache/build:latest
+FROM dcache/build:master
 
-COPY etc/dcache /etc/dcache
-COPY etc/grid-security /etc/grid-security
+COPY etc/* /etc/dcache/
+COPY etc/layouts/* /etc/dcache/layouts/
+COPY etc/grid-security/certificates etc/grid-security/
+COPY etc/grid-security/vomsdir etc/grid-security/
+COPY etc/grid-security/storage-authzdb etc/grid-security/
+COPY init-dcache /init-dcache/
 COPY run-dcache.sh / 
 
-ENTRYPOINT /run-dcache.sh
+

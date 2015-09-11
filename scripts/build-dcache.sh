@@ -19,7 +19,9 @@ docker build --rm --no-cache -t dcache/deps:${tag} ../dcache/${tag}_new/deps/ \
 && \
 docker build --rm --no-cache -t dcache/db:${tag} ../dcache/${tag}_new/db/ \
 && \
-docker build --rm --no-cache -t dcache/build:${tag} ../dcache/${tag}_new/build/
+docker build --rm --no-cache -t dcache/build:${tag} ../dcache/${tag}_new/build/ \
+&& \
+docker build --rm --no-cache -t dcache/dcache:${tag} ../dcache/${tag}_new/dcache/
 
 echo "building finished."
 echo

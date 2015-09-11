@@ -8,7 +8,7 @@ stopDcache() {
 
 for f in /init-dcache/*; do
   if [ -x "${f}" ]; then
-    /init-dcache/${f} 
+    ./${f} 
   fi
 done
 

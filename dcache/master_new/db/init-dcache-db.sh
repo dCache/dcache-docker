@@ -6,4 +6,4 @@ su -c "createdb -O dcache -U postgres pinmanager" postgres
 su -c "createdb -O dcache -U postgres spacemanager" postgres
 su -c "createdb -O dcache -U postgres transfermanager" postgres
 su -c "createdb -O dcache -U postgres srm" postgres
-
+su -c "createdb -O dcache -U postgres replica" postgres 

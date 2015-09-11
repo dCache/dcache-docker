@@ -1,11 +1,19 @@
-db:
-  build: ../db/
-
-#deps:
-#  build: ../deps/
-
-#build:
-#  build: ../build/
-
 dcache:
-  build: .
+   image: dcache/dcache:master
+   hostname: zitpcx18435
+   domainname: desy.de
+   expose:
+    - 111
+    - 2049
+    - 2880
+    - 22125
+    - 22224
+   ports:
+    - "2049:2049"
+    - "2880:2880"
+    - "22125:22125"
+    - "22224:22224"
+   links:
+    - db:dcachedb
+db:
+   image: dcache/db:master
