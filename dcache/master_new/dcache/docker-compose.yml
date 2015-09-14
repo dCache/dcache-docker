@@ -1,5 +1,6 @@
 dcache:
-  image: dcache/dcache:master
+  # image: dcache/dcache:master
+  build: . 
   hostname: zitpcx24449
   domainname: desy.de
   expose:
@@ -13,14 +14,7 @@ dcache:
    - "2880:2880"
    - "22125:22125"
    - "22224:22224"
-  volumes_from:
-   - config
   links:
    - db:dcachedb
 db:
-  image: dcache/db:latest
-  volumes_from:
-   - config
-config:
-  build: .
-
+  image: dcache/db:master
