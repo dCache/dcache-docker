@@ -1,0 +1,8 @@
+alias = pkIRISGrid
+ca_url = http://pki.irisgrid.es/ca/cert/9dd23746.0
+crl_url = http://pki.irisgrid.es/ca/crl/cacrl.pem
+email = pkirisgrid-ca@rediris.es
+status = accredited:classic
+url = http://pki.irisgrid.es/
+version = 1.62
+sha1fp.0 = 7D:CA:AE:EA:2B:64:F9:E4:5D:5F:7E:B5:51:70:F5:00:78:54:E7:11
