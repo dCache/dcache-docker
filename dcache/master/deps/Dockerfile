@@ -5,7 +5,7 @@ RUN apt-get -y install software-properties-common && add-apt-repository -y ppa:w
 
 RUN apt-get -y update && apt-get -y upgrade
 
-RUN apt-get -y install bash-completion openssl ssl-cert build-essential git maven build-essential debhelper quilt fakeroot lintian
+RUN apt-get -y install bash-completion vim openssl ssl-cert build-essential git maven build-essential debhelper quilt fakeroot lintian
 
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 

@@ -1,2 +1,2 @@
 build:
-  image: dcache/build:master
+  build: .

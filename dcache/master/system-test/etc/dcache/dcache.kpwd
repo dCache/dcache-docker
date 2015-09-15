@@ -32,6 +32,7 @@
 # in user created files this do not have to be in a separate section
 
 version 2.1
+mapping "/C=DE/O=GermanGrid/OU=DESY/CN=Christian Bernardt" bernardt
 
 # the following are the user auth records
 login bernardt read-write 503 1000 / / /

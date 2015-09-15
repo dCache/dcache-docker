@@ -1,0 +1,2 @@
+version 2.1
+authorize admin read-write 0 0 / / /

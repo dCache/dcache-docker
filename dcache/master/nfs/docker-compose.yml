@@ -1,4 +1,4 @@
-dcache:
+standalone:
   build: .
   hostname: zitpcx24449
   domainname: desy.de
