@@ -3,14 +3,13 @@ head:
   hostname: zitpcx16435
   domainname: desy.de
   expose:
-   - 111 
-   - 2049
-   - 2880
+   - 2288
+   - 8444
    - 22125
    - 22224
   ports:
-   - "2049:2049"
-   - "2880:2880"
+   - "2288:2288"
+   - "8444:8444"
    - "22125:22125"
    - "22224:22224"
   links:
@@ -32,10 +31,19 @@ pool2:
 webdav:
   image: dcache/webdav:master
   hostname: zitpcx16435
+  expose:
+   - 2880
+  ports:
+   - "2880:2880"
   links:
    - head:dcachebroker
 nfs:
   image: dcache/nfs:master
+  expose:
+   - 111 
+   - 2049
+  ports:
+   - "2049:2049"
   links:
    - head:dcachebroker
    - db:dcachedb
