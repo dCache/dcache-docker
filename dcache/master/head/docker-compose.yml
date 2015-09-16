@@ -16,7 +16,7 @@ head:
   links:
    - db:dcachedb
 db:
-  image: dcache/db:latest
+  image: dcache/db:master
 pool1:
   image: dcache/pool:master
   environment:
@@ -31,10 +31,12 @@ pool2:
    - head:dcachebroker 
 webdav:
   image: dcache/webdav:master
+  hostname: zitpcx16435
   links:
    - head:dcachebroker
 nfs:
   image: dcache/nfs:master
   links:
    - head:dcachebroker
+   - db:dcachedb
 
