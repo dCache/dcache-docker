@@ -25,11 +25,5 @@ docker build --rm --no-cache -t dcache/dcache:${tag} ../dcache/${tag}/dcache/
 
 echo "building finished."
 echo
-echo "To run dcache do:"
-echo
-echo "# docker run -d -v <somedir>/dcache-db:/var/lib/postgresql/data --name db /dcache/db:${tag}"
-echo
-echo "and then:"
-echo
-echo "# docker run -d -p 2049:2049 -p 2880:2880 -p 22224:22224 --hostname=\$HOST -v <somedir>/dcache-logs:/var/log/dcache -v <somedir>/dcache-pools:/pools --name dcache --link db:dcachedb dcache/standalone:${tag}"
+echo "Next build the single-purpose containers using ./build-container.sh"
 echo
