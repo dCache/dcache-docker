@@ -21,3 +21,6 @@ RUN cp /etc/ssl/private/ssl-cert-snakeoil.key /etc/grid-security/hostkey.pem
 RUN mv /etc/grid-security/hostkey.pem /etc/grid-security/hostkey.pem-pk8
 RUN openssl rsa -in /etc/grid-security/hostkey.pem-pk8 -out /etc/grid-security/hostkey.pem
 
+COPY vimrc /etc/vim/vimrc
+COPY .vim /root/.vim
+

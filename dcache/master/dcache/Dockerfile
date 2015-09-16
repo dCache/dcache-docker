@@ -9,4 +9,7 @@ COPY run-dcache.sh /
 ONBUILD COPY etc/dcache /etc/dcache
 ONBUILD COPY init-dcache /init-dcache/
 
+ONBUILD VOLUME /var/log/dcache
+ONBUILD VOLUME /var/lib/dcache
+
 ONBUILD ENTRYPOINT ["/run-dcache.sh"]
