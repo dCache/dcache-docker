@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/space/workspace/dcache-bash-completion'
+let g:netrw_dirhist_2='/afs/desy.de/user/k/karsten/.zsh'
+let g:netrw_dirhist_3='/etc/bash_completion.d'
+let g:netrw_dirhist_4='/space/workspace/dcache/packages'
+let g:netrw_dirhist_5='/space/workspace/dcache/packages/fhs'
+let g:netrw_dirhist_6='/etc/dcache/layouts'
+let g:netrw_dirhist_7='/space/workspace/JavaFileTimer'
