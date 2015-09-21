@@ -1,8 +1,8 @@
 FROM dcache/build:master
 MAINTAINER dCache "https://www.dcache.org"
 
-COPY etc/* /etc/dcache/
-COPY etc/grid-security/certificates/* etc/grid-security/certificates/
+COPY etc/dcache /etc/dcache/
+COPY etc/grid-security/certificates /etc/grid-security/certificates
 COPY init-dcache /init-dcache/
 COPY run-dcache.sh /
 
