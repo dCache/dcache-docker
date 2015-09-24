@@ -18,34 +18,34 @@ db:
   image: dcache/db:master
 pool1:
   image: dcache/pool:master
-  hostname: zitpcx18435
-  domainname: desy.de
+  hostname: $(hostname)
+  domainname: $(hostname -d)
   environment:
     - DOMAIN=pool1Domain
     - POOLNAME=pool1
   expose:
    - 20000-25000
   ports:
-   - "20000-25000:20000-25000"
+   - 20000
   links:
    - head:dcachebroker 
 pool2:
   image: dcache/pool:master
-  hostname: zitpcx18435
-  domainname: desy.de
+  hostname: $(hostname)
+  domainname: $(hostname -d)
   environment:
     - DOMAIN=pool2Domain
     - POOLNAME=pool2
   expose:
    - 20000-25000
   ports:
-   - "20000-25000:20000-25000"
+   - 20000
   links:
    - head:dcachebroker 
 webdav:
   image: dcache/webdav:master
-  hostname: zitpcx18435
-  domainname: desy.de
+  hostname: $(hostname)
+  domainname: $(hostname -d)
   environment:
     - DOMAIN=wedavDoor
   expose:

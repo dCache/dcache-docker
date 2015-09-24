@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -z "$1" ]
 then
@@ -15,8 +15,6 @@ then
   exit 3
 fi
 
-docker build --rm --no-cache -t dcache/dcache:${tag} ../dcache/${tag}/dcache/ \
-&& \
 docker build --rm --no-cache -t dcache/head:${tag} ../dcache/${tag}/head/ \
 && \
 docker build --rm --no-cache -t dcache/pool:${tag} ../dcache/${tag}/pool/ \
@@ -25,7 +23,11 @@ docker build --rm --no-cache -t dcache/webdav:${tag} ../dcache/${tag}/webdav/ \
 && \
 docker build --rm --no-cache -t dcache/nfs:${tag} ../dcache/${tag}/nfs/ 
 
-echo "building finished."
+echo "Generating docker-compose.yml file in ../dcache/${tag}/head/docker-compose.yml"
+
+./generate-docker-compose.sh $tag
+
+echo "finished."
 echo
 echo "To run dcache do:"
 echo
