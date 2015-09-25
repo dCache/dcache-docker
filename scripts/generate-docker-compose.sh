@@ -11,5 +11,5 @@ tag=$1
 EOF=EOF_$RANDOM; eval echo "\"$(cat <<$EOF
 $(<docker-compose.yml)
 $EOF
-)\"" > ../dcache/${tag}/head/docker-compose.yml
+)\"" > ../dcache/branches/${tag}/head/docker-compose.yml
 

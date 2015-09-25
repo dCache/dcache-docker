@@ -1,0 +1,9 @@
+# @(#)$Id: a02131f7.info,v 1.2 2013/06/06 13:34:51 pmacvsdg Exp $
+alias = DFN-SLCS
+ca_url = http://cdp1.pca.dfn.de/slcs-ca/pub/cacert/cacert.crt
+crl_url = http://cdp1.pca.dfn.de/slcs-ca/pub/crl/cacrl.crl
+email = dfnpca@dfn-cert.de
+status = accredited:slcs
+url = https://www.pki.dfn.de/grid/slcs/
+version = 1.62
+sha1fp.0 = C8:27:B8:59:E1:60:5E:FF:2E:1B:DA:52:88:CC:EF:1C:84:08:D4:A2

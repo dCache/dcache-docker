@@ -9,19 +9,19 @@ fi
 
 tag="$1"
 
-if [ ! -d ../dcache/${tag} ]
+if [ ! -d ../dcache/branches/${tag} ]
 then
   echo "Tag: $1 does not exist. Exiting."
   exit 3
 fi
 
-docker build --rm --no-cache -t dcache/db:${tag} ../dcache/${tag}/db/ \
+docker build -t dcache/db:latest ../dcache/db-image/ \
 && \
-docker build --rm --no-cache -t dcache/deps:${tag} ../dcache/${tag}/deps/ \
+docker build -t dcache/deps:latest ../dcache/build-deps-image/ \
 && \
-docker build --rm --no-cache -t dcache/build:${tag} ../dcache/${tag}/build/ \
+docker build --rm --no-cache -t dcache/build:${tag} ../dcache/branches/${tag}/build/ \
 && \
-docker build --rm --no-cache -t dcache/dcache:${tag} ../dcache/${tag}/dcache/
+docker build --rm --no-cache -t dcache/dcache:${tag} ../dcache/branches/${tag}/dcache/
 
 echo "building finished."
 echo

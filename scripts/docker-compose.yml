@@ -23,10 +23,11 @@ pool1:
   environment:
     - DOMAIN=pool1Domain
     - POOLNAME=pool1
+    - POOLHTTPPORT=20000
   expose:
-   - 20000-25000
-  ports:
    - 20000
+  ports:
+   - "20000:20000"
   links:
    - head:dcachebroker 
 pool2:
@@ -36,12 +37,25 @@ pool2:
   environment:
     - DOMAIN=pool2Domain
     - POOLNAME=pool2
+    - POOLHTTPPORT=20001
   expose:
-   - 20000-25000
+   - 20001
   ports:
-   - 20000
+   - "20001:20001"
   links:
    - head:dcachebroker 
+xrootd:
+  image: dcache/xrootd:master
+  hostname: $(hostname)
+  domainname: $(hostname -d)
+  environment:
+    - DOMAIN=xrootdDoor
+  expose:
+    - 1094
+  ports:
+    - "1094:1094"
+  links:
+    - head:dcachebroker
 webdav:
   image: dcache/webdav:master
   hostname: $(hostname)

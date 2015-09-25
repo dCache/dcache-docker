@@ -1,0 +1,82 @@
+head:
+  image: dcache/head:master
+  environment:
+   - DOMAIN=dCacheDomain
+  expose:
+   - 2288
+   - 8444
+   - 22125
+   - 22224
+  ports:
+   - 2288:2288
+   - 8444:8444
+   - 22125:22125
+   - 22224:22224
+  links:
+   - db:dcachedb
+db:
+  image: dcache/db:master
+pool1:
+  image: dcache/pool:master
+  hostname: zitpcx18435
+  domainname: desy.de
+  environment:
+    - DOMAIN=pool1Domain
+    - POOLNAME=pool1
+    - POOLHTTPPORT=20000
+  expose:
+   - 20000
+  ports:
+   - 20000:20000
+  links:
+   - head:dcachebroker 
+pool2:
+  image: dcache/pool:master
+  hostname: zitpcx18435
+  domainname: desy.de
+  environment:
+    - DOMAIN=pool2Domain
+    - POOLNAME=pool2
+    - POOLHTTPPORT=20001
+  expose:
+   - 20001
+  ports:
+   - 20001:20001
+  links:
+   - head:dcachebroker 
+xrootd:
+  image: dcache/xrootd:master
+  hostname: zitpcx18435
+  domainname: desy.de
+  environment:
+    - DOMAIN=xrootdDoor
+  expose:
+    - 1094
+  ports:
+    - 1094:1094
+  links:
+    - head:dcachebroker
+webdav:
+  image: dcache/webdav:master
+  hostname: zitpcx18435
+  domainname: desy.de
+  environment:
+    - DOMAIN=wedavDoor
+  expose:
+   - 2880
+  ports:
+   - 2880:2880
+  links:
+   - head:dcachebroker
+nfs:
+  image: dcache/nfs:master
+  environment:
+    - DOMAIN=nfsDoor
+  expose:
+   - 111 
+   - 2049
+  ports:
+   - 2049:2049
+  links:
+   - head:dcachebroker
+   - db:dcachedb
