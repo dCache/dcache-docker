@@ -9,10 +9,5 @@ createDirs() {
   chown -R dcache:dcache $1
 }
 
-createDirs /var/pools/pool_write
-createDirs /var/pools/pool_read
-createDirs /var/pools/pool_r1
-createDirs /var/pools/pool_r2
-createDirs /var/pools/pool_r3
-createDirs /var/pools/pool_sm
+createDirs /var/pools/pool
 echo "\n"

@@ -1,0 +1,21 @@
+dcache:
+  image: dcache/standalone:master
+  hostname: zitpcx18435
+  domainname: desy.de
+  expose:
+   - 111
+   - 1094
+   - 2288
+   - 2880
+   - 8444
+   - 22125
+   - 22224
+  ports:
+   - 2049:2049
+   - 2288:2288
+   - 2880:2880
+   - 8444:8444
+   - 20000:20000
+   - 22125:22125
+   - 22224:22224
+
