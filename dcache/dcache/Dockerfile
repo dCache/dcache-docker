@@ -1,4 +1,4 @@
-FROM dcache/build:master
+FROM dcache/build:2.13
 MAINTAINER dCache "https://www.dcache.org"
 
 COPY etc/dcache /etc/dcache/

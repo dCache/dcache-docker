@@ -1,6 +1,6 @@
 #!/bin/sh
 
-tag=master
+tag=2.13
 
 docker build -t dcache/db:latest ../dcache/db/ \
 && \

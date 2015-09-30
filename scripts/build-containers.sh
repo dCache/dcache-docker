@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tag=master
+tag=2.13
 
 docker build --rm --no-cache -t dcache/head:${tag} ../dcache/head/ \
 && \

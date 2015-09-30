@@ -1,5 +1,5 @@
 dcache:
-  image: dcache/standalone:master
+  image: dcache/standalone:2.13
   hostname: zitpcx18435
   domainname: desy.de
   expose:

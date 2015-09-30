@@ -1,3 +1,3 @@
-FROM dcache/dcache:master
+FROM dcache/dcache:2.13
 MAINTAINER dCache "https://www.dcache.org"
 

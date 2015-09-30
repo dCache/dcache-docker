@@ -1,5 +1,5 @@
 head:
-  image: dcache/head:master
+  image: dcache/head:2.13
   environment:
    - DOMAIN=dCacheDomain
   expose:
@@ -15,9 +15,9 @@ head:
   links:
    - db:dcachedb
 db:
-  image: dcache/db:master
+  image: dcache/db:latest
 pool1:
-  image: dcache/pool:master
+  image: dcache/pool:2.13
   hostname: zitpcx18435
   domainname: desy.de
   environment:
@@ -31,7 +31,7 @@ pool1:
   links:
    - head:dcachebroker 
 pool2:
-  image: dcache/pool:master
+  image: dcache/pool:2.13
   hostname: zitpcx18435
   domainname: desy.de
   environment:
@@ -45,7 +45,7 @@ pool2:
   links:
    - head:dcachebroker 
 xrootd:
-  image: dcache/xrootd:master
+  image: dcache/xrootd:2.13
   hostname: zitpcx18435
   domainname: desy.de
   environment:
@@ -57,7 +57,7 @@ xrootd:
   links:
     - head:dcachebroker
 webdav:
-  image: dcache/webdav:master
+  image: dcache/webdav:2.13
   hostname: zitpcx18435
   domainname: desy.de
   environment:
@@ -69,7 +69,7 @@ webdav:
   links:
    - head:dcachebroker
 nfs:
-  image: dcache/nfs:master
+  image: dcache/nfs:2.13
   environment:
     - DOMAIN=nfsDoor
   expose:
