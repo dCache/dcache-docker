@@ -15,7 +15,11 @@ head:
   links:
    - db:dcachedb
 db:
+<<<<<<< HEAD
   image: dcache/db:2.13
+=======
+  image: dcache/db:latest
+>>>>>>> 8082bc4... change db version in docker-compose to latest
 pool1:
   image: dcache/pool:2.13
   hostname: $(hostname)
