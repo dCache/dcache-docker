@@ -1,0 +1,15 @@
+xrootd:
+  build: .
+  hostname: zitpcx18435
+  domainname: desy.de
+  environment:
+   - DOMAIN=xrootdDoor
+  extra_hosts:
+   - "dcachedb:131.169.137.213"
+   - "dcachebroker:131.169.137.213"
+   - "cherrytree:131.169.137.213"
+  ports:
+   - 1094:1094
+  expose:
+   - 1094 
+
