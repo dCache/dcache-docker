@@ -1,4 +1,4 @@
-FROM dcache/dcache:2.13
+FROM dcache/dcache:master
 MAINTAINER dCache "https://www.dcache.org"
 
 COPY etc/storage.xml /etc/storage.xml
