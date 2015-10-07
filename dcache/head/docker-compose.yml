@@ -15,7 +15,7 @@ head:
   links:
    - db:dcachedb
 db:
-  image: dcache/db:master
+  image: dcache/db:latest
 pool1:
   image: dcache/pool:master
   hostname: zitpcx18435
