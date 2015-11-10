@@ -3,6 +3,8 @@ MAINTAINER dCache "https://www.dcache.org"
 
 RUN groupadd -r dcache && useradd -r -g dcache dcache
 
+WORKDIR /
+
 RUN git clone https://github.com/dCache/dcache.git
 
 WORKDIR /dcache
