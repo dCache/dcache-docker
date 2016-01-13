@@ -12,5 +12,5 @@ docker build --rm --no-cache -t dcache/dcache:${tag} ../dcache/dcache/
 
 echo "building finished."
 echo
-echo "Next build the single-purpose containers using ./build-container.sh"
+echo "Next build the containers using ./build-containers.sh"
 echo
